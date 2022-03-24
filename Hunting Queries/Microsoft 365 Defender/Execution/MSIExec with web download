@@ -1,0 +1,5 @@
+//Detect MSIExec where installation package is on the web
+DeviceProcessEvents
+| where Timestamp > ago(7d)
+| where FileName has "msiexec.exe"
+| where ProcessCommandLine has "http"
