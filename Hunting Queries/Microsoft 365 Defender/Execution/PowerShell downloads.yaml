@@ -18,5 +18,6 @@ query: |
      or ProcessCommandLine has "IEX"
      or ProcessCommandLine has "Start-BitsTransfer"
      or ProcessCommandLine has "mpcmdrun.exe"
+     or ProcessCommandLine has "msiexec.exe"
   | project Timestamp, DeviceName, InitiatingProcessFileName, FileName, ProcessCommandLine
   | top 100 by Timestamp
